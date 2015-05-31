@@ -48,6 +48,29 @@ type AssetList struct {
     Result []AssetLocations `xml:"result>rowset>row"`
 }
 
+type NotificationTextRow struct {
+    NotificationId int    `xml:"notificationID,attr"`
+    Data           string `xml:"row"`
+}
+
+type NotificationTextList struct {
+    APIResult
+    Results []NotificationTextRow `xml:"result>rowset"`
+}
+
+type Notification struct {
+    NotificationId int    `xml:"notificationID,attr"`
+    TypeId         int    `xml:"typeID,attr"`
+    SenderId       int    `xml:"senderID,attr"`
+    SentDate       string `xml:"sentDate,attr"`
+    Read           int    `xml:"read,attr"`
+}
+
+type NotificationList struct {
+    APIResult
+    Results []Notification `xml:"result>rowset>row"`
+}
+
 type StarbaseRow struct {
     TypeId   string `xml:"typeID,attr"`
     Quantity string `xml:"quantity,attr"`

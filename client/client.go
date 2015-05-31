@@ -6,7 +6,7 @@ import (
     "log"
     "net/http"
 
-    "github.com/censhin/pos-hole/config"
+    "github.com/censhin/eve-poll/config"
 )
 
 type Client struct {
